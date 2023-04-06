@@ -85,7 +85,7 @@ function validar_renda_pela_profissao(profissao,valor_parcela,renda){
             return 'A parcela não cabe na renda do comprador'
         }
     }else{
-        return 'ERRO! Informe opção válida, (1) para servidor púlbico e (2) para servidor privado.'
+        return 'ERRO! Informe opção válida, (1) para servidor público e (2) para servidor privado.'
     }
     
 }
