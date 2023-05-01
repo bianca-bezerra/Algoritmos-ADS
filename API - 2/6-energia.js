@@ -1,8 +1,9 @@
 import { question } from "readline-sync"
+import { mostrar_texto, obter_numero_positivo } from "./lib_utils.js"
 
 function main(){
-    const leitura_atual = Number(question('Leitura atual:'))
-    const leitura_anterior = Number(question('Leitura anterior:'))
+    const leitura_atual = obter_numero_positivo('Leitura atual:')
+    const leitura_anterior = obter_numero_positivo('Leitura anterior:')
 
     const consumo = leitura_atual - leitura_anterior
     const valor_consumo = apuracao_consumo(consumo)
@@ -13,15 +14,15 @@ function main(){
     const valor_confins = obter_valor_confins(valor_consumo)
     const valor_faturado = valor_consumo + valor_bandeira_vermelha + valor_confins + valor_icms + valor_iluminacao
 
-    console.log('\n')
-    console.log('--------- TALÃO DE ENERGIA --------')
-    console.log(`Consumo: ${consumo} Kwh`)
-    console.log(`Valor faturado: R$ ${valor_faturado}`)
-    console.log(`Bandeira: R$ ${valor_bandeira_vermelha} - (${qtd_bandeiras}) bandeira(s) `)
-    console.log(`ICMS: R$ ${valor_icms}`)
-    console.log(`PIS/CONFINS: R$ ${valor_confins}`)
-    console.log(`Taxa de iluminação: R$ ${valor_iluminacao}`)
-    console.log('\n')
+    mostrar_texto('\n')
+    mostrar_texto('--------- TALÃO DE ENERGIA --------')
+    mostrar_texto(`Consumo: ${consumo} Kwh`)
+    mostrar_texto(`Valor faturado: R$ ${valor_faturado}`)
+    mostrar_texto(`Bandeira: R$ ${valor_bandeira_vermelha} - (${qtd_bandeiras}) bandeira(s) `)
+    mostrar_texto(`ICMS: R$ ${valor_icms}`)
+    mostrar_texto(`PIS/CONFINS: R$ ${valor_confins}`)
+    mostrar_texto(`Taxa de iluminação: R$ ${valor_iluminacao}`)
+    mostrar_texto('\n')
 }
 main()
 
