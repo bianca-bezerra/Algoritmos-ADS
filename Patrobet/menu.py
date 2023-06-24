@@ -13,7 +13,6 @@ def main():
     MOSTRAR_BILHETES = 6
     ZERAR = 7
 
-
     while opcao != 0:
     
         if opcao == VENDER_BILHETE:
@@ -31,7 +30,6 @@ def main():
                 print(menu())
                 opcao2 = obter_numero(menu_venda())
                 
-
         if opcao == VALOR_ARRECADADO:
             if len(bilhetes) >= 1:
                 valor_arrecadado = obter_valor_arrecadado(bilhetes)
@@ -58,14 +56,12 @@ def main():
 
             print(f'\n> {len(quadras)} acertaram a quadra!')
 
-
             print(f'> {len(quinas)} acertaram a quina!')
 
             if len(senas) > 0:
                 print(f'> {len(senas)} acertaram a sena!')
             else:
                 print(colored('\n      ACUMULOU!!!!!','yellow'))
-            
             
         if opcao == MOSTRAR_RESULTADOS:
             opcao3 = obter_numero(menu_resultados())
